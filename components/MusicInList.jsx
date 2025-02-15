@@ -3,6 +3,14 @@ import DeleteIcon from "./icons/DeleteIcon";
 import EmptyAlbumIcon from "./icons/EmptyAlbumIcon";
 
 export default function MusicInList({music}) {
+
+    function handleDeleteMusic(music) {
+        window.electronAPI.SendToElectron("music-delete", music)
+    }
+    function handleAddMusic(music) {
+        window.electronAPI.SendToElectron("music-to-play", music)
+    }
+
     return (
         <div className="m-5 p-2 flex flex-row border border-gray-500 w-full gap-2">
             <EmptyAlbumIcon />
@@ -12,8 +20,8 @@ export default function MusicInList({music}) {
                     <h2 className="text-white">{music}</h2>
                 </div>
                 <div className="flex flex-row justify-center gap-5 h-full">
-                    <AddIcon />
-                    <DeleteIcon />
+                    <AddIcon onClick={() => handleAddMusic(music)}/>
+                    <DeleteIcon onClick={() => handleDeleteMusic(music)}/>
                 </div>
             </div>
         </div>
