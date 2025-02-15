@@ -3,7 +3,7 @@ const path = require('node:path')
 const fs = require('node:fs')
 let mainWindow
 
-const musicDir = path.join(__dirname,"..","public","songs")
+const musicDir = path.join(__dirname,"..","public","music")
 
 function createWindow() {
     mainWindow = new BrowserWindow({

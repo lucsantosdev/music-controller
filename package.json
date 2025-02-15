@@ -1,7 +1,7 @@
 {
-  "name": "podcast-streaming-website",
+  "name": "music-controller",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "scripts": {
     "dev": "concurrently \"npm run next\" \"npm run electron\"",
     "electron": "electron ./electron/main.js",
