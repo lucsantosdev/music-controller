@@ -105,37 +105,38 @@ export default function ControlMusic() {
 
     return (
         <div className="w-96 h-14 px-8 flex-col justify-center items-center gap-4 inline-flex">
-        <div className="justify-center items-center gap-8 inline-flex">
-            <div className="w-4 h-4 justify-start items-start gap-2.5 flex">
-                <div className="w-4 h-4 relative">
-                    <PreviousIcon onClick={handlePrevious}/>
+            <div className="justify-center items-center gap-8 inline-flex">
+                <div className="w-4 h-4 justify-start items-start gap-2.5 flex">
+                    <div className="w-4 h-4 relative">
+                        <PreviousIcon onClick={handlePrevious}/>
+                    </div>
                 </div>
-            </div>
-            <div
-                id="play"
-                className="flex w-4 h-4 justify-start items-start gap-2.5"
-            >
-                <div className="w-4 h-4 relative">
-                    <PlayIcon onClick={handlePlay}/>
+                <div
+                    id="play"
+                    className="flex w-4 h-4 justify-start items-start gap-2.5"
+                >
+                    <div className="w-4 h-4 relative">
+                        <PlayIcon onClick={handlePlay}/>
+                    </div>
                 </div>
-            </div>
 
-            <audio ref={audioRef} onEnded={handleNext}>
-                <source src={audio} type="audio/mp3"/>
-            </audio>
+                <audio ref={audioRef} onEnded={handleNext}>
+                    <source src={audio} type="audio/mp3"/>
+                </audio>
 
-            <div
-                id="pause"
-                className="hidden w-4 h-4 justify-start items-start gap-2.5"    
-            >
-                <div className="w-4 h-4 relative">
-                    <PauseIcon onClick={handlePause}/>
-                </div>    
-            </div>
+                <div
+                    id="pause"
+                    className="hidden w-4 h-4 justify-start items-start gap-2.5"    
+                >
+                    <div className="w-4 h-4 relative">
+                        <PauseIcon onClick={handlePause}/>
+                    </div>    
+                </div>
 
-            <div className="w-4 h-4 justify-start items-start gap-2.5 flex">
-                <div className="w-4 h-4 relative">
-                    <NextIcon onClick={handleNext}/>
+                <div className="w-4 h-4 justify-start items-start gap-2.5 flex">
+                    <div className="w-4 h-4 relative">
+                        <NextIcon onClick={handleNext}/>
+                    </div>
                 </div>
             </div>
 
@@ -156,11 +157,10 @@ export default function ControlMusic() {
                     />
                 </div>
 
-                <div className="text-center text-xs text-white font-semibold leading-tight tracking-wide">
-                {audioRef.current ? formatTime(currentTime) : "00:00"}
-                </div>
+                    <div className="text-center text-xs text-white font-semibold leading-tight tracking-wide">
+                        {audioRef.current ? formatTime(currentTime) : "00:00"}
+                    </div>
             </div>
-        </div>
         </div>
     )
 }
